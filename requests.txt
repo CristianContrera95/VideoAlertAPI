@@ -1,0 +1,50 @@
+
+## Register an user:
+
+>>> r = requests.post('http://0.0.0.0:5000/api/v1/user/register/', json={'username':'Cristian', 'ip': '0.0.0.0', 'password': '123'})
+
+>>> if r.status_code == 200:
+>>> 	r.json()
+{'code': 200,
+ 'status_code': 'Success',
+ 'data': {
+  'id': 1,
+  'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IkNyaXN0aWFuIiwiaXAiOiIwLjAuMC4wIiwicGFzc3dvcmQiOiJkZWYxZjcwOWM1NTNmZWVjOTk3MTk1ZWY1ZjEwMTVkNGY4OTc4NmRlZmFmODQ5ZGQxNWU0YTJkYzBkMDYyZjU2In0.LETtSAkZr8IZneRcfe9ve29oaPO1_b3TL5G2YEeFkHI'}
+}
+
+## Regiter a Jetson device
+
+>>> r = requests.put('http://0.0.0.0:5000/api/v1/jetson/register/', json={'mac':'dc:71:96:53:16:0a', 'ip': '0.0.0.1', 'password': '123', 'name': 'Truck1'});
+
+>>> if r.status_code == 200:
+>>> 	r.json()
+{'code': 200,
+ 'status_code': 'Success',
+ 'data': {
+  'id': 1,
+  'truck_id': 1,
+  'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtYWMiOiJkYzo3MTo5Njo1MzoxNjowYSIsImlwIjoiMC4wLjAuMSIsInBhc3N3b3JkIjoiZGVmMWY3MDljNTUzZmVlYzk5NzE5NWVmNWYxMDE1ZDRmODk3ODZkZWZhZjg0OWRkMTVlNGEyZGMwZDA2MmY1NiIsIm5hbWUiOiJUcnVjazEifQ.Ar5zNPNx2g3nrZo0WPoxqKP5N1IJ3u8Rg1BD31jDeQ0'}
+}
+
+## Register an Alert
+
+>>> r = requests.post('http://0.0.0.0:5000/api/v1/alert/', json={'token':token,'truck_id': 1, 'alert_init': '2020-02-19 12:55:02', 'behavior': 'Safe'});
+
+>>> if r.status_code == 201:
+>>> 	r.json()
+{'code': 201,
+ 'status_code': 'Success',
+ 'data': {
+  'id': 1}
+}
+
+## Close an Alert
+
+>>> r = requests.put('http://0.0.0.0:5000/api/v1/alert/', json={'token': token, 'alert_id': 1, 'alert_end': '2020-02-19 12:56:02'});
+>>> if r.status_code == 201:
+>>> 	r.json()
+{'code': 200,
+ 'status_code': 'Success',
+ 'data': {
+  'id': 1}
+}

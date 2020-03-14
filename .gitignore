@@ -1,0 +1,10 @@
+venv/
+piconsulting/
+.idea/
+.vscode/
+__pycache__/
+ServerAPI/migrations/*
+ServerDB/migrations/*
+JetsonAPI/migrations/*
+templates/
+migrations/
