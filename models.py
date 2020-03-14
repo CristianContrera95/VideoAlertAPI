@@ -99,9 +99,10 @@ class Account(ModelBase, db.Model):
     password = db.Column('password', db.String(255), nullable=False)
     # secret = db.Column('secret', db.String(255), nullable=False)  # field to add unique secret for each account
 
-    def __init__(self, password):
+    def __init__(self, password, role_id):
         super(Account, self).__init__()
         self.password = password
+        self.role_id = role_id
 
     def __repr__(self):
         return f'Account {self.id}'

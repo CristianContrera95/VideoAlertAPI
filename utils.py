@@ -95,6 +95,10 @@ def validate_ip_format(ip):
     return True if re.fullmatch('^([0-9]{1,3}\.){3}([0-9]{1,3})$', ip) is not None else False
 
 
+def validate_mail_format(email):
+    return True
+
+
 def validate_ip_up(ip):
     try:
         if call(['ping', '-c', '1', '-W', '3', '0.0.0.0']):
