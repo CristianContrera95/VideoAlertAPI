@@ -33,7 +33,7 @@ pickleshare==0.7.5
 prompt-toolkit==3.0.3
 protobuf==3.11.3
 ptyprocess==0.6.0
-Pygments==2.5.2
+Pygments==2.7.4
 PyJWT==1.7.1
 pyodbc==4.0.28
 python-dateutil==2.8.1
